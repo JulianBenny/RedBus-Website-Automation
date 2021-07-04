@@ -3,7 +3,6 @@ package in.redbus.tests;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 

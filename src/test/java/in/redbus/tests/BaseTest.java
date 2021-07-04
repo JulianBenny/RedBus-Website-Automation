@@ -165,6 +165,7 @@ public class BaseTest {
 
 	@AfterSuite
 	public static void endReport() {
+		driver.quit();
 		extentReports.flush();
 		extentReports.close();
 		

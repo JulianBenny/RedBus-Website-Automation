@@ -76,6 +76,21 @@ public class HomePage {
 	
 	@FindBy(xpath = "//span[contains(text(),'Email/SMS')]")
 	public WebElement emailSMSTicket;
+	
+	@FindBy(xpath = "//span[@class='flagicon icon-SGP']")
+	public WebElement flag;
+	
+	@FindBy(xpath = "//a[contains(text(),'APSRTC')]")
+	public WebElement APSRTC;
+	
+	@FindBy(xpath = "//div[contains(text(),'Most Innovative Company')]")
+	public WebElement awardLink;
+	
+	@FindBy(xpath = "//a[contains(text(),'KPN Travels')]")
+	public WebElement operator;
+	
+	@FindBy(xpath = "//a[contains(text(),'Goibibo')]")
+	public WebElement goibiboPartner;
 
 	public void selectLocation(String fromLocation, String toLocation) {
 		// capitalising first letter

@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="in.redbus.tests.BusHire">
+      <class name="in.redbus.tests.HomePageSections">
         <methods>
-          <include name="outstation"/>
           <include name="setExtent"/>
           <include name="openBrowser"/>
+          <include name="PartnersSection"/>
           <include name="endReport"/>
           <include name="tearDown"/>
           <include name="intializeWebdriver"/>
         </methods>
-      </class> <!-- in.redbus.tests.BusHire -->
+      </class> <!-- in.redbus.tests.HomePageSections -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -16,7 +16,6 @@ services:
  
   chrome:
     image: selenium/node-chrome-debug
-    container_name: web-chrome
     depends_on:
       - hub
     environment:
@@ -27,7 +26,6 @@ services:
  
   firefox:
     image: selenium/node-firefox-debug
-    container_name: web-firefox
     depends_on:
       - hub
     environment:

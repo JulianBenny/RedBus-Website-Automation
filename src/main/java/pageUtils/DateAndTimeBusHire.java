@@ -40,13 +40,6 @@ public class DateAndTimeBusHire {
 		String MM = amOrpmList[0];
 		String AMorPM = amOrpmList[1];
 
-		// handling exceptions for Minute
-		int minuteVal = Integer.parseInt(MM);
-		if (minuteVal != 0 || minuteVal != 15 || minuteVal != 30 || minuteVal != 45) {
-
-			throw new Exception(MM + " minutes can't be selected");
-		}
-
 		// selecting through table - if equal to month and year then select date
 		String monthYear = monthName.concat(" " + YYYY);
 		String monthYearTitle;
@@ -67,12 +60,10 @@ public class DateAndTimeBusHire {
 			monthYearTitle = driver.findElement(By.xpath(
 					"//div[@class='MuiPickersSlideTransition-transitionContainer MuiPickersCalendarHeader-transitionContainer']//p"))
 					.getText();
-//			System.out.println(monthYearTitle);
 			if (monthYear.equals(monthYearTitle)) {
 
 				// selecting day
 				String calDayXpath = String.format("//p[contains(text(),'%s')]", date);
-//				System.out.println(calDayXpath);
 				calDay = driver.findElement(By.xpath(calDayXpath));
 				calDay.click();
 
