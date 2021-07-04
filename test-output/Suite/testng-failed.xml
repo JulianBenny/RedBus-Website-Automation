@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="in.redbus.tests.SearchBus">
+        <methods>
+          <include name="invalidDateSearchBus"/>
+          <include name="validSearchBus"/>
+          <include name="setExtent"/>
+          <include name="invalidLocSearchBus"/>
+          <include name="openBrowser"/>
+          <include name="endReport"/>
+          <include name="tearDown"/>
+          <include name="intializeWebdriver"/>
+        </methods>
+      </class> <!-- in.redbus.tests.SearchBus -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

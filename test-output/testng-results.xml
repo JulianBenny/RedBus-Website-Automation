@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-07-04T06:04:14Z" name="Default suite" finished-at="2021-07-04T06:05:10Z" duration-ms="56414">
+    <groups>
+    </groups>
+    <test started-at="2021-07-04T06:04:14Z" name="Default test" finished-at="2021-07-04T06:05:10Z" duration-ms="56414">
+      <class name="in.redbus.tests.HomePageButtons">
+        <test-method is-config="true" signature="setExtent()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:14Z" name="setExtent" finished-at="2021-07-04T06:04:14Z" duration-ms="79" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExtent -->
+        <test-method is-config="true" signature="intializeWebdriver()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:14Z" name="intializeWebdriver" finished-at="2021-07-04T06:04:23Z" duration-ms="8896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intializeWebdriver -->
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:23Z" name="openBrowser" finished-at="2021-07-04T06:04:27Z" duration-ms="3661" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="busHireButton()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:27Z" name="busHireButton" finished-at="2021-07-04T06:04:30Z" duration-ms="3560" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- busHireButton -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:30Z" name="tearDown" finished-at="2021-07-04T06:04:36Z" duration-ms="5986" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=busHireButton status=SUCCESS method=HomePageButtons.busHireButton()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="intializeWebdriver()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:36Z" name="intializeWebdriver" finished-at="2021-07-04T06:04:42Z" duration-ms="5477" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intializeWebdriver -->
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:42Z" name="openBrowser" finished-at="2021-07-04T06:04:44Z" duration-ms="1970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="helpButton()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:44Z" name="helpButton" finished-at="2021-07-04T06:04:46Z" duration-ms="1995" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- helpButton -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:46Z" name="tearDown" finished-at="2021-07-04T06:04:46Z" duration-ms="196" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=helpButton status=SUCCESS method=HomePageButtons.helpButton()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="intializeWebdriver()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:46Z" name="intializeWebdriver" finished-at="2021-07-04T06:04:52Z" duration-ms="5988" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intializeWebdriver -->
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:52Z" name="openBrowser" finished-at="2021-07-04T06:04:54Z" duration-ms="2129" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="rPoolButton()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:54Z" name="rPoolButton" finished-at="2021-07-04T06:04:56Z" duration-ms="1725" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- rPoolButton -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:56Z" name="tearDown" finished-at="2021-07-04T06:04:57Z" duration-ms="1069" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=rPoolButton status=SUCCESS method=HomePageButtons.rPoolButton()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="intializeWebdriver()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:04:57Z" name="intializeWebdriver" finished-at="2021-07-04T06:05:03Z" duration-ms="5964" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intializeWebdriver -->
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:05:03Z" name="openBrowser" finished-at="2021-07-04T06:05:05Z" duration-ms="1980" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="redbusButtonFunctionality()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:05:05Z" name="redbusButtonFunctionality" finished-at="2021-07-04T06:05:09Z" duration-ms="4329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- redbusButtonFunctionality -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:05:09Z" name="tearDown" finished-at="2021-07-04T06:05:10Z" duration-ms="1460" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=redbusButtonFunctionality status=SUCCESS method=HomePageButtons.redbusButtonFunctionality()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="endReport()[pri:0, instance:in.redbus.tests.HomePageButtons@52350abb]" started-at="2021-07-04T06:05:10Z" name="endReport" finished-at="2021-07-04T06:05:11Z" duration-ms="483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- in.redbus.tests.HomePageButtons -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
