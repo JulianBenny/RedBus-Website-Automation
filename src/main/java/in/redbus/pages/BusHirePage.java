@@ -3,6 +3,7 @@ package in.redbus.pages;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -46,6 +47,17 @@ public class BusHirePage {
 	
 	@FindBy(xpath = "//button[@id='proceedButtonOutstation']")
 	public WebElement proceedButton;
+	
+	public void enterLocation(String pickup, String dest) {
+		pickupLocation.sendKeys(pickup);
+		String pickupOptXpath = String.format("//span[contains(text(),'%s')]", pickup);
+		driver.findElement(By.xpath(pickupOptXpath)).click();
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
+		destinationLocation.sendKeys(dest);
+		String destOptXpath = String.format("//span[contains(text(),'%s')]", dest);
+		driver.findElement(By.xpath(destOptXpath)).click();
+	}
 	
 	
 	public void enterDateAndTimeOutstation(String fromDateAndTime , String tillDateAndTime){

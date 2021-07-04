@@ -33,7 +33,7 @@ public class SearchBus extends BaseTest {
 
 		
 		//TEST
-		log.info(testName + " started..." );
+		log.info(testName + " test case started..." );
 		HomePage hp = new HomePage(driver);
 
 		hp.selectLocation(testData.get("From"), testData.get("To"));
@@ -80,7 +80,7 @@ public class SearchBus extends BaseTest {
 		//TEST
 		String expectedTitle = testData.get("Expected Title");
 		
-		log.info(testName + " started..." );
+		log.info(testName + " test case started..." );
 		HomePage hp = new HomePage(driver);
 		try {
 			hp.selectLocation(testData.get("From"), testData.get("To"));
@@ -91,7 +91,7 @@ public class SearchBus extends BaseTest {
 		
 	}
 	
-	@Test
+//	@Test
 	public void invalidDateSearchBus() {
 		String testName = "Invalid Date while searching for bus";
 
@@ -108,7 +108,7 @@ public class SearchBus extends BaseTest {
 
 		
 		//TEST
-		log.info(testName + " started..." );
+		log.info(testName + " test case started..." );
 		HomePage hp = new HomePage(driver);
 
 		hp.selectLocation(testData.get("From"), testData.get("To"));

@@ -41,11 +41,11 @@ public class DateAndTimeBusHire {
 		String AMorPM = amOrpmList[1];
 
 		// handling exceptions for Minute
-		// int minuteVal = Integer.parseInt(MM);
-		// if(minuteVal != 0 || minuteVal != 15 || minuteVal != 30 || minuteVal != 45) {
-		//
-		// throw new Exception(MM+" minutes can't be selected");
-		// }
+		int minuteVal = Integer.parseInt(MM);
+		if (minuteVal != 0 || minuteVal != 15 || minuteVal != 30 || minuteVal != 45) {
+
+			throw new Exception(MM + " minutes can't be selected");
+		}
 
 		// selecting through table - if equal to month and year then select date
 		String monthYear = monthName.concat(" " + YYYY);
@@ -64,38 +64,35 @@ public class DateAndTimeBusHire {
 
 		while (!requiredDate) {
 
-			monthYearTitle = driver.findElement(By.xpath("//div[@class='MuiPickersSlideTransition-transitionContainer MuiPickersCalendarHeader-transitionContainer']//p"))
+			monthYearTitle = driver.findElement(By.xpath(
+					"//div[@class='MuiPickersSlideTransition-transitionContainer MuiPickersCalendarHeader-transitionContainer']//p"))
 					.getText();
 //			System.out.println(monthYearTitle);
 			if (monthYear.equals(monthYearTitle)) {
 
 				// selecting day
-				String calDayXpath = String.format("//p[contains(text(),'%s')]",date);
+				String calDayXpath = String.format("//p[contains(text(),'%s')]", date);
 //				System.out.println(calDayXpath);
 				calDay = driver.findElement(By.xpath(calDayXpath));
 				calDay.click();
 
 				// selecting time HH
-				String callHHXpath = "//h3[@class = 'MuiTypography-root MuiPickersToolbarText-toolbarTxt MuiPickersToolbarText-toolbarBtnSelected MuiTypography-h3']";
-				calHH = driver.findElement(By.xpath(callHHXpath));
-				calHH.click();
+				calHH = driver.findElement(By.xpath("//*[text() = '" + HH + "']"));
 				Actions actionHH = new Actions(driver);
-				actionHH.moveToElement(driver.findElement(By.xpath("//h3[text() = '"+HH+"' and @class = 'MuiTypography-root MuiPickersToolbarText-toolbarTxt MuiPickersToolbarText-toolbarBtnSelected MuiTypography-h3']"))).click().perform();
+				actionHH.moveToElement(calHH).click().perform();
 
 				// selecting time MM
-				String calMMXpath = String.format("//h3[contains(text(),'%s')]", MM);
-				calMM = driver.findElement(By.xpath(calMMXpath));
+				calMM = driver.findElement(By.xpath("//*[text() = '" + MM + "']"));
 				Actions actionMM = new Actions(driver);
 				actionMM.moveToElement(calMM).click().perform();
 
 				// selecting time AMorPM
-				calAMorPM = driver.findElement(By.xpath("//h6[contains(text() = '" + AMorPM + "')]"));
+				calAMorPM = driver.findElement(By.xpath("//*[text() = '" + AMorPM + "']"));
 				Actions actionAM = new Actions(driver);
 				actionAM.moveToElement(calAMorPM).click().perform();
 
 				// click on ok button
-				okButton = driver.findElement(
-						By.xpath("//div[@class= 'MuiDialogActions-root MuiDialogActions-spacing']//button[2]"));
+				okButton = driver.findElement(By.xpath("//span[contains(text(),'OK')]"));
 				okButton.click();
 
 				requiredDate = true;
@@ -107,5 +104,4 @@ public class DateAndTimeBusHire {
 			}
 		}
 	}
-
 }

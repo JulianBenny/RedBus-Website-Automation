@@ -1,55 +1,68 @@
 package in.redbus.tests;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Keys;
+import java.util.HashMap;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import com.relevantcodes.extentreports.LogStatus;
 
 import in.redbus.pages.BusHirePage;
 import in.redbus.pages.HomePage;
+import utilities.CommonUtils;
 
 public class BusHire extends BaseTest {
 
-//	@Test
-	public void outstation() {
+	// Worksheet Name used by all tests
+	private String sheetName = "BusHireTestData";
 
+	@Test
+	public void outstation() throws Throwable {
+
+		String testName = "Outstation";
+
+		extentTest = extentReports.startTest(testName); // extent reporting
+		SoftAssert softAssertion = new SoftAssert(); // Assertions
+
+		// Fetching all test data from excel file
+		HashMap<String, String> testData = new HashMap<String, String>();
+		testData = reader.getRowTestData(sheetName, testName);
+
+		// checking if execution required field is no
+		String executionRequired = testData.get("Execution Required").toLowerCase();
+		CommonUtils.toCheckExecutionRequired(executionRequired);
+
+		// TEST
+		log.info(testName + " test case started...");
 		HomePage hp = new HomePage(driver);
 		hp.busHireButton.click();
 
 		BusHirePage bh = new BusHirePage(driver);
+		log.info("Navigated to bus hire page");
+		extentTest.log(LogStatus.INFO, "Navigated to bus hire page");
 		driver.switchTo().frame(bh.iFrame);
 		bh.Outstation.click();
 
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame(bh.iFrame);
 
-//		bh.pickupLocation.sendKeys("Green Park");
-//		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-//		bh.pickupLocation.sendKeys(Keys.ARROW_DOWN);
-//		bh.pickupLocation.sendKeys(Keys.ARROW_UP);
-//		bh.pickupLocation.sendKeys(Keys.ENTER);
-//		bh.pickupLocation.sendKeys(Keys.RETURN);
-//		Select sel = new Select(bh.pickupLocation);
-//		// select with text visible
-//		sel.selectByVisibleText("Green Park");
+		bh.enterLocation(testData.get("Pickup"), testData.get("Destination"));
+		log.info("Pickup and Destination location entered");
+		extentTest.log(LogStatus.INFO, "Pickup and Destination location entered");
 
-//		bh.destinationLocation.sendKeys("Manali");
-//		bh.destinationLocation.sendKeys(Keys.UP);
-//		bh.destinationLocation.sendKeys(Keys.DOWN);
-//		bh.destinationLocation.sendKeys(Keys.RETURN);
+		bh.enterDateAndTimeOutstation(testData.get("From Date and Time"), testData.get("To Date and Time"));
+		log.info("From, To Date and Time entered");
+		extentTest.log(LogStatus.INFO, "From, To Date and Time entered");
 
-		bh.enterDateAndTimeOutstation("9-08-2021-10:05 PM", "12-07-2021-9:30 PM");
+		bh.numPassengers.sendKeys(testData.get("Num of passengers"));
+		log.info("Number of passengers entered");
+		extentTest.log(LogStatus.INFO, "Number of passengers entered");
 
-		bh.numPassengers.sendKeys("4");
+		bh.proceedButton.click();
 
-//		bh.proceedButton.click();
-
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		softAssertion.assertEquals(true,
+				driver.findElement(By.xpath(testData.get("Expected xpath of element"))).isDisplayed(),
+				"Assering if reached the point where only personal details have to be filled");
 
 	}
 

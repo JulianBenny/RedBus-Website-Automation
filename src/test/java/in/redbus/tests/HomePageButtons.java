@@ -33,7 +33,7 @@ public class HomePageButtons extends BaseTest {
 		CommonUtils.toCheckExecutionRequired(executionRequired);
 
 		// TEST
-		log.info(testName + " started...");
+		log.info(testName + " test case started...");
 		softAssertion.assertEquals(driver.getTitle(), testData.get("Expected Title"),
 				"Assertion that we start on homepage");
 
@@ -68,7 +68,7 @@ public class HomePageButtons extends BaseTest {
 		CommonUtils.toCheckExecutionRequired(executionRequired);
 
 		// TEST
-		log.info(testName + " started...");
+		log.info(testName + " test case started...");
 		String oldTab = driver.getWindowHandle(); // getting window handle of current tab
 
 		HomePage hp = new HomePage(driver);
@@ -101,7 +101,7 @@ public class HomePageButtons extends BaseTest {
 		CommonUtils.toCheckExecutionRequired(executionRequired);
 
 		// TEST
-		log.info(testName + " started...");
+		log.info(testName + " test case started...");
 		
 		HomePage hp = new HomePage(driver);
 		hp.rPoolButton.click();
@@ -127,7 +127,7 @@ public class HomePageButtons extends BaseTest {
 		CommonUtils.toCheckExecutionRequired(executionRequired);
 
 		// TEST
-		log.info(testName + " started...");
+		log.info(testName + " test case started...");
 		
 		HomePage hp = new HomePage(driver);
 		hp.busHireButton.click();

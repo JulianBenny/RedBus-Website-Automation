@@ -3,18 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="in.redbus.tests.HomePageButtons">
+      <class name="in.redbus.tests.BusHire">
         <methods>
-          <include name="helpButton"/>
-          <include name="rPoolButton"/>
-          <include name="redbusButtonFunctionality"/>
+          <include name="outstation"/>
           <include name="setExtent"/>
           <include name="openBrowser"/>
           <include name="endReport"/>
           <include name="tearDown"/>
           <include name="intializeWebdriver"/>
         </methods>
-      </class> <!-- in.redbus.tests.HomePageButtons -->
+      </class> <!-- in.redbus.tests.BusHire -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
