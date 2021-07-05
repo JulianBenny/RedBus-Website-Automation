@@ -49,69 +49,6 @@ public class BaseTest {
 		extentReports = new ExtentReports(".\\Reports\\ExtentReport.html");
 	}
 
-	// Instantiating driver according to the browser and mode in accordance to the
-	// input in config.properties file
-//	@BeforeMethod
-//	public static void intializeWebdriver() {
-//
-//		if ((ReadPropertiesFile.prop.getProperty("browser")).equalsIgnoreCase("chrome")) {
-//
-//			if (ReadPropertiesFile.prop.getProperty("headless").equalsIgnoreCase("true")) {
-//
-//				System.setProperty(ReadPropertiesFile.prop.getProperty("chromeDriver"), // Reading from
-//																						// config.properties file
-//						ReadPropertiesFile.prop.getProperty("chromeDriverAddress"));
-//
-//				ChromeOptions options = new ChromeOptions();
-//				options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
-//						"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox",
-//						"--disable-dev-shm-usage");
-//				driver = new ChromeDriver(options);
-//			}
-//
-//			else if (ReadPropertiesFile.prop.getProperty("headless").equalsIgnoreCase("false")) {
-//
-//				System.setProperty(ReadPropertiesFile.prop.getProperty("chromeDriver"), // Reading from
-//																						// config.properties file
-//						ReadPropertiesFile.prop.getProperty("chromeDriverAddress"));
-//				driver = new ChromeDriver();
-//			}
-//		}
-//
-//		else if ((ReadPropertiesFile.prop.getProperty("browser")).equalsIgnoreCase("firefox")) {
-//
-//			if (ReadPropertiesFile.prop.getProperty("headless").equalsIgnoreCase("true")) {
-//
-//				System.setProperty(ReadPropertiesFile.prop.getProperty("firefoxDriver"), // Reading from
-//																							// config.properties file
-//						ReadPropertiesFile.prop.getProperty("firefoxDriverAddress"));
-//				FirefoxBinary firefoxBinary = new FirefoxBinary();
-//				firefoxBinary.addCommandLineOptions("-headless", "--disable-gpu", "--window-size=1920,1200",
-//						"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox",
-//						"--disable-dev-shm-usage");
-//				FirefoxOptions options = new FirefoxOptions();
-//				options.setBinary(firefoxBinary);
-//				driver = new FirefoxDriver(options);
-//			}
-//
-//			else if (ReadPropertiesFile.prop.getProperty("headless").equalsIgnoreCase("false")) {
-//
-//				System.setProperty(ReadPropertiesFile.prop.getProperty("firefoxDriver"), // Reading from
-//																							// config.properties file
-//						ReadPropertiesFile.prop.getProperty("firefoxDriverAddress"));
-//				driver = new FirefoxDriver();
-//			}
-//		}
-//
-//		else if ((ReadPropertiesFile.prop.getProperty("browser")).equalsIgnoreCase("edge")) {
-//
-//			System.setProperty(ReadPropertiesFile.prop.getProperty("edgeDriver"),
-//					ReadPropertiesFile.prop.getProperty("edgeDriverAddress"));
-//			driver = new EdgeDriver();
-//		}
-//
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // Implicit wait
-//	}
 	
 	@BeforeMethod
 	public static void intializeWebdriver() {

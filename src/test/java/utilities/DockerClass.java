@@ -28,7 +28,7 @@ public class DockerClass extends BaseTest {
 	public DockerClass() throws Exception {
 
 		// check for browsername
-		if (browserName.equals("chrome") || browserName.equals("firefox") || browserName.equals("ie")) {
+		if (browserName.equals("chrome") || browserName.equals("firefox")) {
 
 			log.info("Browser supported");
 		} else {
@@ -39,8 +39,7 @@ public class DockerClass extends BaseTest {
 		}
 	}
 
-	public static RemoteWebDriver toRunBrowserOnDocker(boolean headlessMode)
-			throws MalformedURLException {
+	public static RemoteWebDriver toRunBrowserOnDocker(boolean headlessMode) throws MalformedURLException {
 
 		url = new URL("http://localhost:4444/wd/hub");
 
@@ -101,16 +100,6 @@ public class DockerClass extends BaseTest {
 			remoteDriver = new RemoteWebDriver(url, firefoxOptions);
 		}
 
-		else if (browserName.equals("ie")) {
-
-			caps = DesiredCapabilities.internetExplorer();
-//				ieOptions = new InternetExplorerOptions();
-//				ieOptions.addArguments("headless");
-//				ieOptions.addArguments("window-size=1920,1080");
-			// ieOptions.merge(caps);
-			remoteDriver = new RemoteWebDriver(url, chromeOptions);
-		}
-
 		return remoteDriver;
 	}
 
@@ -122,7 +111,7 @@ public class DockerClass extends BaseTest {
 //			caps = DesiredCapabilities.chrome();
 			ChromeOptions opt = new ChromeOptions();
 			opt.addArguments("--no-sandbox");
-	        opt.addArguments("--disable-dev-shm-usage");
+			opt.addArguments("--disable-dev-shm-usage");
 			remoteDriver = new RemoteWebDriver(url, opt);
 		}
 
@@ -140,7 +129,6 @@ public class DockerClass extends BaseTest {
 			caps = DesiredCapabilities.internetExplorer();
 		}
 
-
 		return remoteDriver;
 	}
 
@@ -154,6 +142,8 @@ public class DockerClass extends BaseTest {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
 					"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
+			options.addArguments(
+					"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36");
 			webDriver = new ChromeDriver(options);
 		}
 
@@ -169,16 +159,6 @@ public class DockerClass extends BaseTest {
 			webDriver = new FirefoxDriver(options);
 		}
 
-//		else if(browserName.equals("ie")) {
-//			
-//			System.setProperty("webdriver.ie.driver","./Resources/drivers/IEDriverServer.exe");
-//			ieOptions = new InternetExplorerOptions();
-//			
-//			logger.info("IE doesn't support headless mode .... starting normal");
-////			ieOptions.addArguments("window-size=1920,1080");
-//			// ieOptions.merge(caps);
-//			webDriver = new InternetExplorerDriver(ieOptions);
-//		}
 
 		return webDriver;
 	}
@@ -203,12 +183,6 @@ public class DockerClass extends BaseTest {
 
 		}
 
-//		else if(browserName.equals("ie")) {
-//			
-//			System.setProperty("webdriver.ie.driver","./Resources/drivers/IEDriverServer.exe");
-//			webDriver = new InternetExplorerDriver();
-//			log.info("IE driver initiated in head mode");
-//		}
 
 		return webDriver;
 	}

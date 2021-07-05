@@ -3,7 +3,6 @@ package in.redbus.tests;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -35,11 +34,7 @@ public class HomePageSections extends BaseTest{
 		log.info(testName + " test case started...");
 		String oldTab = driver.getWindowHandle(); // getting window handle of current tab
 		HomePage hp = new HomePage(driver);
-		
-		Actions a = new Actions(driver);
-	    a.moveToElement(hp.flag);
-	    a.perform();
-		
+
 		hp.flag.click();
 		log.info("Clicking on Singapore flag");
 		extentTest.log(LogStatus.INFO, "Clicking on Singapore flag");
@@ -76,10 +71,6 @@ public class HomePageSections extends BaseTest{
 		String oldTab = driver.getWindowHandle(); // getting window handle of current tab
 		HomePage hp = new HomePage(driver);
 		
-		Actions a = new Actions(driver);
-	    a.moveToElement(hp.APSRTC);
-	    a.perform();
-		
 		hp.APSRTC.click();
 		log.info("Clicking on APSRTC option in Top RTC's Secrion");
 		extentTest.log(LogStatus.INFO, "Clicking on APSRTC option in Top RTC's Secrion");
@@ -115,10 +106,6 @@ public class HomePageSections extends BaseTest{
 		String oldTab = driver.getWindowHandle(); // getting window handle of current tab
 		HomePage hp = new HomePage(driver);
 		
-		Actions a = new Actions(driver);
-	    a.moveToElement(hp.awardLink);
-	    a.perform();
-		
 		hp.awardLink.click();
 		log.info("Clicking on Award Link");
 		extentTest.log(LogStatus.INFO, "Clicking on Award Link");
@@ -153,10 +140,6 @@ public class HomePageSections extends BaseTest{
 		log.info(testName + " test case started...");
 		HomePage hp = new HomePage(driver);
 		
-		Actions a = new Actions(driver);
-	    a.moveToElement(hp.awardLink);
-	    a.perform();
-		
 		hp.operator.click();
 		log.info("Clicking on one of the operators");
 		extentTest.log(LogStatus.INFO, "Clicking on one of the operators");
@@ -184,10 +167,6 @@ public class HomePageSections extends BaseTest{
 		// TEST
 		log.info(testName + " test case started...");
 		HomePage hp = new HomePage(driver);
-		
-		Actions a = new Actions(driver);
-	    a.moveToElement(hp.goibiboPartner);
-	    a.perform();
 		
 		hp.goibiboPartner.click();
 		log.info("Clicking on one of our partners-goibibo");

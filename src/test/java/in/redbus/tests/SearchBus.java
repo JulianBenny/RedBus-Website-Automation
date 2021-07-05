@@ -91,7 +91,7 @@ public class SearchBus extends BaseTest {
 		
 	}
 	
-//	@Test
+	@Test
 	public void invalidDateSearchBus() {
 		String testName = "Invalid Date while searching for bus";
 
