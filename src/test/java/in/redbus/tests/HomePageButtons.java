@@ -77,13 +77,14 @@ public class HomePageButtons extends BaseTest {
 
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
 		newTab.remove(oldTab);
-		driver.switchTo().window(newTab.get(0));     // change focus to new tab
+		driver.switchTo().window(newTab.get(0)); // change focus to new tab
 		hp.closeSigninHelpPage.click();
-		
-		softAssertion.assertEquals(testData.get("Expected Title"), driver.getTitle(), "Assertion that new tab with redbus help opened");
-		
+
+		softAssertion.assertEquals(testData.get("Expected Title"), driver.getTitle(),
+				"Assertion that new tab with redbus help opened");
+
 	}
-	
+
 	@Test
 	public void rPoolButton() {
 		String testName = "rPool Button";
@@ -101,15 +102,16 @@ public class HomePageButtons extends BaseTest {
 
 		// TEST
 		log.info(testName + " test case started...");
-		
+
 		HomePage hp = new HomePage(driver);
 		hp.rPoolButton.click();
 		log.info("Clicked rPool button on homepage");
 		extentTest.log(LogStatus.INFO, "Clicked rPool button on homepage");
-		
-		softAssertion.assertEquals(driver.getTitle(), testData.get("Expected Title"), "Assertion that redirected to rPool Page");
+
+		softAssertion.assertEquals(driver.getTitle(), testData.get("Expected Title"),
+				"Assertion that redirected to rPool Page");
 	}
-	
+
 	@Test
 	public void busHireButton() {
 		String testName = "Bus Hire Button";
@@ -127,12 +129,13 @@ public class HomePageButtons extends BaseTest {
 
 		// TEST
 		log.info(testName + " test case started...");
-		
+
 		HomePage hp = new HomePage(driver);
 		hp.busHireButton.click();
 		log.info("Clicked Bus Hire button on homepage");
 		extentTest.log(LogStatus.INFO, "Clicked Bus Hire button on homepage");
-		
-		softAssertion.assertEquals(driver.getTitle(), testData.get("Expected Title"), "Assertion that redirected to Bus Hire Page");
+
+		softAssertion.assertEquals(driver.getTitle(), testData.get("Expected Title"),
+				"Assertion that redirected to Bus Hire Page");
 	}
 }

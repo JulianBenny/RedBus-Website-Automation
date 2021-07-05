@@ -2,16 +2,12 @@ package utilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Collections;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -78,7 +74,6 @@ public class DockerClass extends BaseTest {
 
 		ChromeOptions chromeOptions = null;
 		FirefoxOptions firefoxOptions = null;
-		InternetExplorerOptions ieOptions = null;
 
 		if (browserName.equals("chrome")) {
 
@@ -108,7 +103,6 @@ public class DockerClass extends BaseTest {
 
 		if (browserName.equals("chrome")) {
 
-//			caps = DesiredCapabilities.chrome();
 			ChromeOptions opt = new ChromeOptions();
 			opt.addArguments("--no-sandbox");
 			opt.addArguments("--disable-dev-shm-usage");
@@ -117,7 +111,6 @@ public class DockerClass extends BaseTest {
 
 		else if (browserName.equals("firefox")) {
 
-//			caps = DesiredCapabilities.firefox();
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--no-sandbox");
 			options.addArguments("--disable-dev-shm-usage");
@@ -159,7 +152,6 @@ public class DockerClass extends BaseTest {
 			webDriver = new FirefoxDriver(options);
 		}
 
-
 		return webDriver;
 	}
 
@@ -182,7 +174,6 @@ public class DockerClass extends BaseTest {
 			log.info("Firefox driver initiated in head mode");
 
 		}
-
 
 		return webDriver;
 	}

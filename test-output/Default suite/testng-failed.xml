@@ -7,7 +7,6 @@
         <methods>
           <include name="setExtent"/>
           <include name="openBrowser"/>
-          <include name="PartnersSection"/>
           <include name="endReport"/>
           <include name="tearDown"/>
           <include name="RTCSection"/>

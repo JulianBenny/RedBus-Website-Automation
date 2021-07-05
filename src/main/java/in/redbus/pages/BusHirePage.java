@@ -50,7 +50,7 @@ public class BusHirePage {
 
 	@FindBy(xpath = "//button[@id='proceedButtonOutstation']")
 	public WebElement proceedButton;
-	
+
 	@FindBy(xpath = "//button[@id='proceedButtonLocal']")
 	public WebElement proceedButtonLocal;
 
@@ -81,7 +81,7 @@ public class BusHirePage {
 		jse.executeScript("arguments[0].click()", fromDate);
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		
+
 		// selecting start date and time
 		try {
 			DateAndTimeBusHire.selectDateAndTimeAtBusHirePage(driver, fromDateAndTime);

@@ -11,7 +11,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-
 public class ExcelUtils {
 
 	public String path;
@@ -99,7 +98,7 @@ public class ExcelUtils {
 				return cellText;
 			} else if (cell.getCellType().BLANK != null)
 				return "";
-			
+
 			else
 				return String.valueOf(cell.getBooleanCellValue());
 
@@ -227,31 +226,5 @@ public class ExcelUtils {
 
 		return testData;
 	}
-	
-//	public static void main(String args[]) {
-//		
-//		ExcelUtils reader = null;
-//		
-//		try {
-//
-//			reader = new ExcelUtils("./Resources/Test Data/TestDataForRedBus.xlsx");
-//		}
-//		catch(Exception e) {
-//
-//			e.getMessage();
-//		}
-//		
-//		String testName = "whenUserClickOnBusHireLink";
-//		String sheetName = "HomePageTestData";
-//		
-//		HashMap<String, String> testData = new HashMap<String, String>();
-//		testData = reader.getRowTestData(sheetName, testName);
-//
-//		String expectedTitle = testData.get("Expected Title");
-//		String executionRequired = testData.get("Execution Required").toLowerCase();
-//		
-//		System.out.println(expectedTitle);
-//		System.out.println(executionRequired);
-//	}
 
 }

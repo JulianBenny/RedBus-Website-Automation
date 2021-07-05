@@ -10,9 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class HomePage {
-	
+
 	// Log4j logger
 	public final static Logger log = Logger.getLogger(HomePage.class);
 
@@ -29,9 +28,6 @@ public class HomePage {
 	@FindBy(id = "signInLink")
 	public WebElement signInLink;
 
-//	@FindBy(xpath = "//iframe[@id='gsi_493526_234645']")
-//	public WebElement googleSignIn;
-
 	@FindBy(id = "src")
 	public WebElement fromLoc;
 
@@ -43,52 +39,52 @@ public class HomePage {
 
 	@FindBy(id = "search_btn")
 	public WebElement searchBuses;
-	
+
 	@FindBy(id = "redBus")
 	public WebElement busTickets;
-	
+
 	@FindBy(xpath = "//i[@class = 'icon icon-redBus_Logo D121_logo_main']")
 	public WebElement redbusButton;
-	
+
 	@FindBy(xpath = "//a[contains(text(),'Help')]")
 	public WebElement helpButton;
-	
+
 	@FindBy(xpath = "//i[@class = 'icon-close']")
 	public WebElement closeSigninHelpPage;
-	
+
 	@FindBy(id = "cars")
 	public WebElement rPoolButton;
-	
+
 	@FindBy(id = "redBus Bus Hire")
 	public WebElement busHireButton;
-	
+
 	@FindBy(xpath = "//div[contains(text(),'Manage Booking')]")
 	public WebElement manageBooking;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Cancel')]")
 	public WebElement cancel;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Change Travel Date')]")
 	public WebElement changeTravelDate;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Show My Ticket')]")
 	public WebElement showTicket;
-	
+
 	@FindBy(xpath = "//span[contains(text(),'Email/SMS')]")
 	public WebElement emailSMSTicket;
-	
+
 	@FindBy(xpath = "//span[@class='flagicon icon-SGP']")
 	public WebElement flag;
-	
+
 	@FindBy(xpath = "//a[contains(text(),'APSRTC')]")
 	public WebElement APSRTC;
-	
+
 	@FindBy(xpath = "//div[contains(text(),'Most Innovative Company')]")
 	public WebElement awardLink;
-	
+
 	@FindBy(xpath = "//a[contains(text(),'KPN Travels')]")
 	public WebElement operator;
-	
+
 	@FindBy(xpath = "//a[contains(text(),'Goibibo')]")
 	public WebElement goibiboPartner;
 
@@ -108,7 +104,7 @@ public class HomePage {
 		try {
 			log.info(toLocation + " was entered");
 			driver.findElement(By.xpath(xpath2)).click();
-		}catch (NoSuchElementException e) {
+		} catch (NoSuchElementException e) {
 			throw new NoSuchElementException("Invalid Location");
 		}
 		log.info(toLocation + " was entered");

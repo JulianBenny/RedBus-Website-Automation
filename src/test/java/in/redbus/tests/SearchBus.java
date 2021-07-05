@@ -12,7 +12,7 @@ import utilities.CommonUtils;
 import utilities.HandlingCalendar;
 
 public class SearchBus extends BaseTest {
-	
+
 	// Worksheet Name used by all tests
 	private String sheetName = "SearchBusTestData";
 
@@ -20,28 +20,27 @@ public class SearchBus extends BaseTest {
 	public void validSearchBus() {
 		String testName = "Valid Search for a bus";
 
-		extentTest = extentReports.startTest(testName);    // extent reporting
-		SoftAssert softAssertion = new SoftAssert();	   // Assertions
+		extentTest = extentReports.startTest(testName); // extent reporting
+		SoftAssert softAssertion = new SoftAssert(); // Assertions
 
 		// Fetching all test data from excel file
 		HashMap<String, String> testData = new HashMap<String, String>();
 		testData = reader.getRowTestData(sheetName, testName);
-		
+
 		// checking if execution required field is no
 		String executionRequired = testData.get("Execution Required").toLowerCase();
 		CommonUtils.toCheckExecutionRequired(executionRequired);
 
-		
-		//TEST
-		log.info(testName + " test case started..." );
+		// TEST
+		log.info(testName + " test case started...");
 		HomePage hp = new HomePage(driver);
 
 		hp.selectLocation(testData.get("From"), testData.get("To"));
 		extentTest.log(LogStatus.INFO, "Both Locations entered");
 
-		String[] dataStr = testData.get("Date").trim().split("\\s+");    // getting date from excel and splitting 
-																		 // them by blank space
-		
+		String[] dataStr = testData.get("Date").trim().split("\\s+"); // getting date from excel and splitting
+																		// them by blank space
+
 		try {
 			HandlingCalendar.selectDate(hp.calendar, dataStr[2], dataStr[1], dataStr[0], driver);
 			extentTest.log(LogStatus.INFO, "Date entered");
@@ -53,70 +52,68 @@ public class SearchBus extends BaseTest {
 		hp.searchBuses.click();
 		extentTest.log(LogStatus.INFO, "Date entered");
 		log.info("Search button clicked");
-		
+
 		String actualTitle = driver.getTitle().toLowerCase();
 		String expectedTitle = testData.get("Expected Title");
-		
+
 		softAssertion.assertEquals(expectedTitle, actualTitle, "Assertion on actual and expected title of page.");
 
 	}
-	
+
 	@Test
 	public void invalidLocSearchBus() {
 		String testName = "Invalid Location while searching for bus";
 
-		extentTest = extentReports.startTest(testName);    // extent reporting
-		SoftAssert softAssertion = new SoftAssert();	   // Assertions
+		extentTest = extentReports.startTest(testName); // extent reporting
+		SoftAssert softAssertion = new SoftAssert(); // Assertions
 
 		// Fetching all test data from excel file
 		HashMap<String, String> testData = new HashMap<String, String>();
 		testData = reader.getRowTestData(sheetName, testName);
-		
+
 		// checking if execution required field is no
 		String executionRequired = testData.get("Execution Required").toLowerCase();
 		CommonUtils.toCheckExecutionRequired(executionRequired);
 
-		
-		//TEST
+		// TEST
 		String expectedTitle = testData.get("Expected Title");
-		
-		log.info(testName + " test case started..." );
+
+		log.info(testName + " test case started...");
 		HomePage hp = new HomePage(driver);
 		try {
 			hp.selectLocation(testData.get("From"), testData.get("To"));
-		}catch (Exception e) {
+		} catch (Exception e) {
 			String actualTitle = driver.getTitle().toLowerCase();
 			softAssertion.assertEquals(expectedTitle, actualTitle, "Assertion on actual and expected title of page.");
 		}
-		
+
 	}
-	
+
 	@Test
 	public void invalidDateSearchBus() {
 		String testName = "Invalid Date while searching for bus";
 
-		extentTest = extentReports.startTest(testName);    // extent reporting
-		SoftAssert softAssertion = new SoftAssert();	   // Assertions
+		extentTest = extentReports.startTest(testName); // extent reporting
+		SoftAssert softAssertion = new SoftAssert(); // Assertions
 
 		// Fetching all test data from excel file
 		HashMap<String, String> testData = new HashMap<String, String>();
 		testData = reader.getRowTestData(sheetName, testName);
-		
+
 		// checking if execution required field is no
 		String executionRequired = testData.get("Execution Required").toLowerCase();
 		CommonUtils.toCheckExecutionRequired(executionRequired);
 
-		
-		//TEST
-		log.info(testName + " test case started..." );
+		// TEST
+		log.info(testName + " test case started...");
 		HomePage hp = new HomePage(driver);
 
 		hp.selectLocation(testData.get("From"), testData.get("To"));
 		extentTest.log(LogStatus.INFO, "Both Locations entered");
 
-		String[] dataStr = testData.get("Date").trim().split("\\s+");    // getting date from excel and splitting 
-																		 // them by blank space
-		
+		String[] dataStr = testData.get("Date").trim().split("\\s+"); // getting date from excel and splitting
+																		// them by blank space
+
 		try {
 			HandlingCalendar.selectDate(hp.calendar, dataStr[2], dataStr[1], dataStr[0], driver);
 			extentTest.log(LogStatus.INFO, "Date entered");
@@ -128,14 +125,12 @@ public class SearchBus extends BaseTest {
 		hp.searchBuses.click();
 		extentTest.log(LogStatus.INFO, "Date entered");
 		log.info("Search button clicked");
-		
+
 		String actualTitle = driver.getTitle().toLowerCase();
 		String expectedTitle = testData.get("Expected Title");
-		
+
 		softAssertion.assertEquals(expectedTitle, actualTitle, "Assertion on actual and expected title of page.");
 
 	}
-	
-	
 
 }

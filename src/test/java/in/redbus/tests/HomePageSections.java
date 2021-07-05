@@ -3,6 +3,8 @@ package in.redbus.tests;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -71,9 +73,10 @@ public class HomePageSections extends BaseTest{
 		String oldTab = driver.getWindowHandle(); // getting window handle of current tab
 		HomePage hp = new HomePage(driver);
 		
+	    new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(hp.APSRTC));
 		hp.APSRTC.click();
-		log.info("Clicking on APSRTC option in Top RTC's Secrion");
-		extentTest.log(LogStatus.INFO, "Clicking on APSRTC option in Top RTC's Secrion");
+		log.info("Clicking on APSRTC option in Top RTC's Section");
+		extentTest.log(LogStatus.INFO, "Clicking on APSRTC option in Top RTC's Section");
 		
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
 		newTab.remove(oldTab);

@@ -96,13 +96,13 @@ public class BaseTest {
 		
 		// closing the driver
 		driver.close();
+		driver.quit();
 		log.info("Browser closed...");
 	}
 
 
 	@AfterSuite
 	public static void endReport() {
-		driver.quit();
 		extentReports.flush();
 		extentReports.close();
 		
