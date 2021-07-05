@@ -62,11 +62,17 @@ public class BaseTest {
 				driver = DockerClass.toRunBrowserOnDocker(headlessMode);
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 		else {
 
-			driver = DockerClass.toRunBrowserOnLocal(headlessMode);
+			try {
+				driver = DockerClass.toRunBrowserOnLocal(headlessMode);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); // Implicit wait
 		

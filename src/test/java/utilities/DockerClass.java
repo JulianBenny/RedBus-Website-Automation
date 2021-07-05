@@ -1,10 +1,10 @@
 package utilities;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -24,7 +24,7 @@ public class DockerClass extends BaseTest {
 	public DockerClass() throws Exception {
 
 		// check for browsername
-		if (browserName.equals("chrome") || browserName.equals("firefox")) {
+		if (browserName.equals("chrome") || browserName.equals("firefox") || browserName.equals("edge")) {
 
 			log.info("Browser supported");
 		} else {
@@ -35,7 +35,7 @@ public class DockerClass extends BaseTest {
 		}
 	}
 
-	public static RemoteWebDriver toRunBrowserOnDocker(boolean headlessMode) throws MalformedURLException {
+	public static RemoteWebDriver toRunBrowserOnDocker(boolean headlessMode) throws Exception {
 
 		url = new URL("http://localhost:4444/wd/hub");
 
@@ -52,7 +52,7 @@ public class DockerClass extends BaseTest {
 		return remoteDriver;
 	}
 
-	public static WebDriver toRunBrowserOnLocal(boolean headlessMode) {
+	public static WebDriver toRunBrowserOnLocal(boolean headlessMode) throws Exception {
 
 		if (headlessMode) {
 
@@ -70,7 +70,7 @@ public class DockerClass extends BaseTest {
 	}
 
 	// To start different browsers in docker
-	public static RemoteWebDriver startBrowserInHeadlessInDocker() {
+	public static RemoteWebDriver startBrowserInHeadlessInDocker() throws Exception {
 
 		ChromeOptions chromeOptions = null;
 		FirefoxOptions firefoxOptions = null;
@@ -94,12 +94,18 @@ public class DockerClass extends BaseTest {
 			firefoxOptions.merge(caps);
 			remoteDriver = new RemoteWebDriver(url, firefoxOptions);
 		}
+		
+		else {
+			log.error("Browser not supported in docker");
+			throw new Exception("Browser not supported in docker");
+		}
+			
 
 		return remoteDriver;
 	}
 
 	// To start different browsers in nonheadless in docker
-	public static RemoteWebDriver startBrowserInNonHeadlessInDocker() throws MalformedURLException {
+	public static RemoteWebDriver startBrowserInNonHeadlessInDocker() throws Exception {
 
 		if (browserName.equals("chrome")) {
 
@@ -117,16 +123,16 @@ public class DockerClass extends BaseTest {
 			remoteDriver = new RemoteWebDriver(url, options);
 		}
 
-		else if (browserName.equals("ie")) {
-
-			caps = DesiredCapabilities.internetExplorer();
+		else {
+			log.error("Browser not supported in docker");
+			throw new Exception("Browser not supported in docker");
 		}
 
 		return remoteDriver;
 	}
 
 	// To start different browsers
-	public static WebDriver startBrowserInHeadlessInLocal() {
+	public static WebDriver startBrowserInHeadlessInLocal() throws Exception {
 
 		if (browserName.equals("chrome")) {
 
@@ -151,6 +157,11 @@ public class DockerClass extends BaseTest {
 			options.setBinary(firefoxBinary);
 			webDriver = new FirefoxDriver(options);
 		}
+		
+		else {
+			log.error("Browser not supported in headless");
+			throw new Exception("Browser not supported in docker");
+		}
 
 		return webDriver;
 	}
@@ -173,6 +184,13 @@ public class DockerClass extends BaseTest {
 			webDriver = new FirefoxDriver();
 			log.info("Firefox driver initiated in head mode");
 
+		}
+		
+		else if(browserName.equals("edge")) {
+			System.setProperty(ReadPropertiesFile.prop.getProperty("edgeDriver"),
+					ReadPropertiesFile.prop.getProperty("edgeDriverAddress"));
+			webDriver = new EdgeDriver();
+			log.info("edge driver initiated in head mode");
 		}
 
 		return webDriver;
