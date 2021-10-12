@@ -1,1 +1,9 @@
-2021-07-05 20:23:14,444 ERROR [main] BaseTest162 - Browser not supported in headless
+2021-08-10 12:52:22,601  INFO [main] BaseTest177 - Chrome driver initiated in head mode
+2021-08-10 12:52:22,625  INFO [main] BaseTest66 - chrome in non headless mode and without docker initiated
+2021-08-10 12:52:34,098  INFO [main] BaseTest86 - URL opened...
+2021-08-10 12:52:35,225  INFO [main] BaseTest36 - Outstation Valid test case started...
+2021-08-10 12:52:48,038  INFO [main] BaseTest41 - Navigated to bus hire page
+2021-08-10 12:53:00,978  INFO [main] BaseTest50 - Pickup and Destination location entered
+2021-08-10 12:53:09,207  INFO [main] BaseTest54 - From, To Date and Time entered
+2021-08-10 12:53:09,707  INFO [main] BaseTest58 - Number of passengers entered
+2021-08-10 12:53:11,345  INFO [main] BaseTest99 - Test case passed

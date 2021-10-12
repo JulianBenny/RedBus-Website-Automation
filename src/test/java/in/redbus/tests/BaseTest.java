@@ -101,9 +101,9 @@ public class BaseTest {
 		extentReports.endTest(extentTest);
 		
 		// closing the driver
-		driver.close();
-		driver.quit();
-		log.info("Browser closed...");
+//		driver.close();
+//		driver.quit();
+//		log.info("Browser closed...");
 	}
 
 
